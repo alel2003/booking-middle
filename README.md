@@ -1,6 +1,6 @@
-# Base-API
+# Booking-API
 
-**Base-api** is a RESTful API project created for use by underlying configurations. The project is developed using **Django**, **Django REST Framework** and **PostgreSQL** as the database.
+**Booking-api** is a RESTful API project created for records. The project is developed using **Django**, **Django REST Framework**, **Redis**, **Docker** and **PostgreSQL** as the database.
 
 ## 🚀 Quick Start
 
@@ -11,8 +11,8 @@ Follow these steps to get up and running with the Base-API on your local machine
 Start by cloning the repository:
 
 ```bash
-git clone https://github.com/your-repo/Base-api.git
-cd book-api
+git clone https://github.com/your-repo/Base-api.git](https://github.com/alel2003/booking-middle
+cd booking-middle
 ```
 
 ### 2. Create a virtual environment
@@ -31,29 +31,28 @@ env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Create a PostgreSQL Database and User
+### 3. Docker container launch
 
 ```bash
-sudo -u postgres psql
-CREATE DATABASE myproject;
-CREATE USER myprojectuser WITH PASSWORD 'password';
-GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+docker compose up -d --build
 ```
 
-### 4. Apply Database Migrations
+### 4. Database create migration
 
 ```bash
-python3 manage.py migrate
+chmod +x migrate.sh
+sudo ./migrate.sh
 ```
 
-### 5. Create a Superuser
+### 5. Create superuser admin
 
 ```bash
+docker exec -it <id> shell
 python3 manage.py createsuperuser
 ```
 
-### 6. Run the Development Server
+### 6. Running tests
 
 ```bash
-python3 manage.py runserver
+docker compose exec web python manage.py test
 ```
