@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     "rest_framework_simplejwt",
-    'rest_framework_swagger'
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -204,3 +204,12 @@ CACHES = {
 
 # Use the Redis cache as the default cache
 CACHES["default"] = CACHES["redis"]
+
+# swagger configuration
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}
