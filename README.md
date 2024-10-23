@@ -11,7 +11,7 @@ Follow these steps to get up and running with the Base-API on your local machine
 Start by cloning the repository:
 
 ```bash
-git clone https://github.com/your-repo/Base-api.git](https://github.com/alel2003/booking-middle
+git clone https://github.com/alel2003/booking-middle.git
 cd booking-middle
 ```
 
