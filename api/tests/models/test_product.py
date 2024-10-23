@@ -14,7 +14,7 @@ class TestModelProduct(TestSetup):
         )
 
     def test_booking_data_str(self):
-        print(self.main_product)
+        self.assertEqual(str(self.main_product), "NAME TEST ONE Stock: 1")
 
     def test_get_product(self):
         product_to_update = Product.objects.get(pk=self.main_product.pk)

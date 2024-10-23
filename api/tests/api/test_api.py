@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework.test import APIClient, APITestCase
 from rest_framework_simplejwt.tokens import RefreshToken
-from datetime import datetime
 
 from api.models import Product, Order
 
@@ -39,8 +38,7 @@ class TestAPI(APITestCase):
         }
 
         self.main_order = Order.objects.create(
-            user=self.user,
-            created_at=datetime.now()
+            user=self.user
         )
 
         self.main_order.products.add(self.main_product.id)

@@ -8,9 +8,10 @@ class Product(models.Model):
     price = models.FloatField()
     stock = models.IntegerField()
     delete = models.BooleanField(default=False)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return f"{self.name.upper()} {self.stock}"
+        return f"{self.name.upper()} Stock: {self.stock}"
 
 
 class Order(models.Model):
@@ -23,6 +24,7 @@ class Order(models.Model):
     products = models.ManyToManyField(Product)
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.NEW)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     delete = models.BooleanField(default=False)
 
     @property
